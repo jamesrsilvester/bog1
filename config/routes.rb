@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root#applic.html.erb
-  creatures#
+  root "creatures#index"
+
+  get "/creatures", to: "creatures#index", as: "creatures"
 end
