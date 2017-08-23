@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root#index.html
+  root#applic.html.erb
+  creatures#
 end

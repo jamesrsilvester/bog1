@@ -12,4 +12,4 @@
  *
  *= require_tree .
  *= require_self
- *= require materialize-0.100.1.min
+ *``= require materialize-0.100.1.min
