@@ -3,6 +3,8 @@ class CreaturesController < ApplicationController
   def index
     # save all existing creatures in db to instance var
     @creatures = Creature.all
+    count = cookies[:visit_count] || 1
+    cookies[:visit_count] = count.to_i + 1
   end
 
   def new
@@ -12,8 +14,7 @@ class CreaturesController < ApplicationController
   def create
     creature_params = params.require(:creature).permit(:name, :description)
 
-    @creature = Creature.new(creature_params)
-
+    creature = Creature.new(creature_params)
     if creature.save
       redirect_to creature_path(creature)
     end
@@ -37,6 +38,7 @@ class CreaturesController < ApplicationController
 
     redirect_to creature_path(creature)
   end
+
 
   def destroy
     creature_id = params[:id]
