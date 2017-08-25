@@ -1,11 +1,11 @@
 <!-- Form Goes Here -->
 
-<%= form_for :creature, url: "/creatures", method: "post" do |fromform| %>
+<%= form_for @creature do |from_form| %>
 <div class="col m4">
   <h5>Creature Name:</h5>
-  <%=fromform.text_field :name%>
+  <%=from_form.text_field :name%>
   <h5>Creature Description:</h5>
-  <%=fromform.text_area :description%>
-  <%=fromform.submit "Add Creature"%>
+  <%=from_form.text_area :description%>
+  <%=from_form.submit "Add Creature"%>
 </div>
 <% end %>
